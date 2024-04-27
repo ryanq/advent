@@ -3,14 +3,186 @@
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/advent/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+
+  <body>
+    <main class="flow">
+      <h1>Waiting for Christmas</h1>
+
+      <section>
+        <p>
+          These are my <a href="https://www.rust-lang.org/">Rust</a> solutions to the
+          <a href="https://adventofcode.com/">Advent of Code</a> problems and pointers to interesting
+          things I encountered while writing them.
+        </p>
+        <p>
+          My goal is to use as little outside code as possible, but there's a good chance I'll use some
+          of the more popular <a href="https://blessed.rs/crates">tooling crates that should be
+          included</a>.
+        </p>
+      </section>
+
+      <h2>2015</h2>
+
+      <table class="pull-right">
+        <thead>
+          <tr><th colspan="2">day</th><th>status</th><th>notes</th></tr>
+        </thead>
+        <tbody>
+          <!-- Status: <span class="star glow">*</span> <span class="star glow">*</span> -->
+          <!-- Notes: <a href="">&rarr</a> -->
+          <tr><td>01</td><td>Not Quite Lisp</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
 </html>
+
+<style>
+  @import url(https://fonts.googleapis.com/css2?family=Sixtyfour:SCAN@-10&display=swap);
+  @import url(https://rsms.me/inter/inter.css);
+  @import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap);
+  
+  @import url(/css/reset.css) layer(reset);
+
+  @layer cascade {
+    /* @link https://utopia.fyi/type/calculator?c=325,18,1.2,960,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    :root {
+      --step--2: clamp(0.7813rem, 0.7717rem + 0.0472vi, 0.8rem);
+      --step--1: clamp(0.9375rem, 0.9055rem + 0.1575vi, 1rem);
+      --step-0: clamp(1.125rem, 1.061rem + 0.315vi, 1.25rem);
+      --step-1: clamp(1.35rem, 1.2412rem + 0.5354vi, 1.5625rem);
+      --step-2: clamp(1.62rem, 1.4495rem + 0.8394vi, 1.9531rem);
+      --step-3: clamp(1.944rem, 1.6894rem + 1.2533vi, 2.4414rem);
+      --step-4: clamp(2.3328rem, 1.9648rem + 1.8115vi, 3.0518rem);
+      --step-5: clamp(2.7994rem, 2.2797rem + 2.5583vi, 3.8147rem);
+    }
+
+    /* @link https://utopia.fyi/space/calculator?c=325,18,1.2,960,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    :root {
+      --space-3xs: clamp(0.3125rem, 0.3125rem + 0vi, 0.3125rem);
+      --space-2xs: clamp(0.5625rem, 0.5305rem + 0.1575vi, 0.625rem);
+      --space-xs: clamp(0.875rem, 0.843rem + 0.1575vi, 0.9375rem);
+      --space-s: clamp(1.125rem, 1.061rem + 0.315vi, 1.25rem);
+      --space-m: clamp(1.6875rem, 1.5915rem + 0.4724vi, 1.875rem);
+      --space-l: clamp(2.25rem, 2.122rem + 0.6299vi, 2.5rem);
+      --space-xl: clamp(3.375rem, 3.1831rem + 0.9449vi, 3.75rem);
+      --space-2xl: clamp(4.5rem, 4.2441rem + 1.2598vi, 5rem);
+      --space-3xl: clamp(6.75rem, 6.3661rem + 1.8898vi, 7.5rem);
+
+      --space-3xs-2xs: clamp(0.3125rem, 0.1526rem + 0.7874vi, 0.625rem);
+      --space-2xs-xs: clamp(0.5625rem, 0.3706rem + 0.9449vi, 0.9375rem);
+      --space-xs-s: clamp(0.875rem, 0.6831rem + 0.9449vi, 1.25rem);
+      --space-s-m: clamp(1.125rem, 0.7411rem + 1.8898vi, 1.875rem);
+      --space-m-l: clamp(1.6875rem, 1.2717rem + 2.0472vi, 2.5rem);
+      --space-l-xl: clamp(2.25rem, 1.4823rem + 3.7795vi, 3.75rem);
+      --space-xl-2xl: clamp(3.375rem, 2.5433rem + 4.0945vi, 5rem);
+      --space-2xl-3xl: clamp(4.5rem, 2.9646rem + 7.5591vi, 7.5rem);
+
+      --space-s-l: clamp(1.125rem, 0.4213rem + 3.4646vi, 2.5rem);
+    }
+
+    :root {
+      color-scheme: dark;
+
+      --c-bg: hsl(120, 69%, 10%);
+      --c-fg: white;
+
+      --c-accent: hsl(0, 86%, 61%);
+    }
+    
+    body {
+      padding-inline: var(--space-s-m) var(--space-l-xl);
+      
+      background-color: var(--c-bg);
+      
+      font-family: 'Inter', sans-serif;
+      font-size: var(--step-0);
+    }
+
+    h1 {
+      font-family: 'Sixtyfour', sans-serif;
+      font-variation-settings:
+        "BLED" 0,
+        "SCAN" -10;
+    }
+
+    p {
+      max-width: 65ch;
+    }
+
+    a {
+      color: var(--c-accent);
+      text-decoration: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      font-family: 'Source Code Pro', monospace;
+      table-layout: fixed;
+    }
+
+    thead {
+      border-bottom: 2px solid var(--c-border, var(--c-fg));
+    }
+
+    th, td {
+      padding: var(--space-3xs);
+
+      text-align: left;
+      vertical-align: top;
+    }
+  }
+
+  @layer composition {
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-flow: dense;
+      gap: var(--space-3xs) var(--space-m);
+
+      @media (width > 64rem) {
+        grid-template-columns: 30ch auto;
+      }
+
+      h1, section { grid-column: 1; }
+      h2 { grid-column-end: -1; align-self: end;}
+      table { grid-column-end: -1; }
+    }
+  }
+
+  @layer utility {
+    .star { color: yellow; }
+    
+    .glow {
+      text-shadow:
+        0 0 5px #fff,
+        0 0 8px #fff,
+        0 0 15px #fff,
+        0 0 25px currentColor,
+        0 0 48px currentColor;
+    }
+  }
+
+  @layer exception {
+    td:nth-child(1) { width: 3ch; }
+    td:nth-child(1)::after { content: ':'}
+
+    td:nth-child(3) {
+      display: grid;
+      grid-template-columns: repeat(2, 1ch);
+      gap: 0.5ch;
+      justify-content: center;
+    }
+
+    :is(th, td):nth-child(n+3) { text-align: center; }
+
+    a[href^="http"]::after { content: '\00a0↗'; }
+  }
+</style>
