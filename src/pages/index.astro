@@ -15,17 +15,23 @@
     <main class="flow">
       <h1>Waiting for Christmas</h1>
 
-      <section>
+      <section class="faq">
         <p>
-          These are my <a href="https://www.rust-lang.org/">Rust</a> solutions to the
-          <a href="https://adventofcode.com/">Advent of Code</a> problems and pointers to interesting
-          things I encountered while writing them.
+          <em>What&apos;re you doing?</em> These are my <a href="https://www.rust-lang.org/">Rust</a> solutions to the <a href="https://adventofcode.com/">Advent of Code</a> problems and pointers to interesting things I encountered while writing them.
         </p>
         <p>
-          My goal is to use as little outside code as possible, but there's a good chance I'll use some
-          of the more popular <a href="https://blessed.rs/crates">tooling crates that should be
-          included</a>.
+          <em>Why?</em> I left the world of programming for my day job and I wanted an excuse to keep doing some.
         </p>
+        <p>
+          <em>It's not even Christmas!</em> Who said it had to be Christmas to solve Santa-themed puzzles?!
+        </p>
+        <p>
+          <em>What are the rules?</em> I want to write idiomatic Rust, so there's going to be more code than is strictly necessary to solve the problem.
+        </p>
+        <ul>
+          <li>No <code>unwrap()</code>s and <code>expect()</code>s.</li>
+          <li>As little outside code as possible, but there's a good chance I'll use some of the more popular <a href="https://blessed.rs/crates">tooling crates that should be included</a>.</li>
+        </ul>
       </section>
 
       <h2>2015</h2>
@@ -167,6 +173,31 @@
         0 0 15px #fff,
         0 0 25px currentColor,
         0 0 48px currentColor;
+    }
+  }
+
+  @layer block {
+    .faq {
+      em {
+        position: relative;
+
+        padding-inline: var(--space-3xs);
+
+        color: var(--c-bg);
+      }
+
+      em::after {
+        content: '';
+        
+        position: absolute;
+        inset: 0;
+
+        background-color: var(--c-fg);
+        background-color: hsl(60, 100%, 87%);
+
+        rotate: z -0.5deg;
+        z-index: -1;
+      }
     }
   }
 
